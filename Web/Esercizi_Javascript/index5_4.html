@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenitore"></div>
+    <script>
+        function hrPazzo()
+        {
+            for (let i = 0; i<=100; i+=5)
+            {
+                let hr = document.createElement("hr");
+                hr.setAttribute("width", i.toString()+"%");
+                document.getElementById("contenitore").appendChild(hr);
+            }
+        }
+        hrPazzo();
+    </script>
+</body>
+</html>

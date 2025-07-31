@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="risultato"></div>
+
+    <script>
+        let secondi = +prompt("Inserisci una quantità di secondi");
+        let ore = parseInt(secondi/3600);
+        let minuti = parseInt(ore%3600/60);
+        let secondi2 = ore%3600%60;
+        document.getElementById("risultato").innerHTML = `${secondi} corrispondono a ${ore} ore, ${minuti} minuti e ${secondi} secondi`;
+    </script>
+</body>
+</html>

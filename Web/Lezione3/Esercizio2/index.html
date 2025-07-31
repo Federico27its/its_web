@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista della spesa</title>
+
+    <script>
+        function addElement(){
+            var ul = document.getElementById("ul");
+            var li = document.createElement("li");
+            var roba = document.getElementById("add").value;
+            li.textContent = roba;
+            ul.appendChild(li);
+
+        }
+    </script>
+</head>
+<body style = "background-color: rgb(134, 177, 70);">
+
+    <!-- <div align = "center" >
+        <img src ="immagini/top.webp">
+    </div> -->
+    <input type="text" id="add" name="add" placeholder="Cosa vuoi aggiungere alla tua lista della speasa??!?!?">
+    <h1 align = "center" style = "color: rebeccapurple">
+        SUPERMERCATONE
+    </h1>
+
+    <ul id = "ul">
+        <li>
+            eheheheheheheheheh
+        </li>
+    </ul>
+    <button onclick = "addElement()">sono un bottone???????????!??!?!???!?!?!??!?!?!??</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        function isEqual(a, b)
+        {
+            if (a === b)
+            {
+                return "TRUE";
+            }
+            else
+            {
+                return "FALSE";
+            }
+        }
+        let a = prompt("Inserisci qualcosa");
+        let b = prompt("Inserisci qualcos'altro");
+        document.getElementById("result").innerHTML = isEqual(a, b);
+    </script>
+</body>
+</html>

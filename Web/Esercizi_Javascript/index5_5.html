@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        function stampaPazza()
+        {
+            let output = "";
+            for (let i = 10; i <= 30; i++)
+            {
+                output += "*".repeat(i) + "<br>";
+            }
+            return output
+        }
+        document.getElementById("result").innerHTML = stampaPazza();
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="risultato"></div>
+    <div id="risultato2"></div>
+
+    <script>
+        let n1 = +prompt("Inserisci un numero");
+        let n2 = +prompt("Inserisci un altro numero");
+        let n3 = +prompt("Inserisci un altro numero");
+        let n4 = +prompt("Inserisci un altro numero");
+        let n5 = +prompt("Inserisci un altro numero");
+        let sum = n1+n2+n3+n4+n5;
+        document.getElementById("risultato").innerHTML = `La somma tra ${n1}, ${n2}, ${n3}, ${n4} e ${n5} è uguale a ${sum}`;
+        document.getElementById("risultato2").innerHTML = `La media è uguale a ${sum/5}`;
+
+        </script>
+</body>
+</html>

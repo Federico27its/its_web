@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="risultato"></div>
+
+    <dic id="esito"></dic>
+
+    <script>
+        var nome = prompt("Inserisci il tuo nome");
+        document.getElementById("risultato").innerHTML = "Ciao " + nome;
+
+        var num1 = prompt("Inserisci un numero");
+        var num2 = prompt("Inserisci un numero");
+
+        // trasformo l'input da STRING a INT
+        var n1 = parseInt(num1);
+        var n2 = parseInt(num2);
+        document.getElementById("esito").innerHTML = `La somma tra ${num1} e ${num2} è ` + (n1 + n2);
+    </script>
+</body>
+</html>

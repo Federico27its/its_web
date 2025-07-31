@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        function range(a)
+        {
+            if (0 < a && a < 8)
+            {
+                return "TRUE";
+            }
+            else
+            {
+                return "FALSE";
+            }
+        }
+
+        function weekDay(a)
+        {
+            if (range(a) == "TRUE")
+            {
+                let l = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"];
+                return l[a-1];
+            }
+            else
+            {
+                return "Peccato, non posso indovinare il numero";
+            }
+        }
+        
+        let x = +prompt("Inserisci un numero");
+        document.getElementById("result").innerHTML = weekDay(x);
+    </script>
+</body>
+</html>
