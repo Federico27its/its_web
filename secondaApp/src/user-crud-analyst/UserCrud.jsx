@@ -12,6 +12,8 @@ const UserCrud = () =>{
         telefono: ""
     })
 
+    const [isEditing, setIsEditing] = useState(false)
+
     const getUsers=async () => {
         const response=await fetch(API_URL);
         const result=await response.json();
@@ -41,6 +43,41 @@ const UserCrud = () =>{
             ...prev,
             [name]:value
         }))
+
+    }
+
+    const handlerEdit=(user)=>{
+      setFormData(user);
+      setIsEditing(true);
+    }
+
+    const onSubmit = async() => {
+      const method = isEditing ? "PUT" : "POST";
+      const url= isEditing ? API_URL+"/"+formData.id : API_URL;
+      try {
+        const response = await fetch(url, {
+          method,
+          headers:{"Content-type":"application/json"},
+          body: JSON.stringify({
+            ...formData,
+            id: isEditing ? formData.id: undefined
+          })
+        })
+          if(!response.ok) throw new Error("Errore su inserimento o modifica")
+      }catch(err){
+        console.log(err)
+      }
+    }
+
+    const resetForm = () => {
+      setFormData({id: null, nome: "", cognome: "", telefono: "", email: ""})
+      setIsEditing(false);
+    }
+    const handlerSubmit= (e) =>{
+      e.preventDefault()
+      onSubmit()
+      getUsers()
+      resetForm()
     }
     return (
         <div className="container my-5">
@@ -49,7 +86,7 @@ const UserCrud = () =>{
              <div className="card shado-sm mb-4">
           <div className="card-body">
              <h2 className="card-title mb-4">Gestione utente</h2>
-             <form >
+             <form onSubmit={handlerSubmit} >
          
           <div className="row g-3 mb-3">
             <div className="col-md-6">
@@ -136,7 +173,7 @@ const UserCrud = () =>{
                                 <td> {u.cognome}</td>
                                 <td> {u.telefono}</td>
                                 <td> {u.email}</td>
-                                <td> <button className="btn btn-primary">Modifica</button><button className="btn btn-danger" onClick={() => handleDelete(u.id)}>Elimina</button></td>
+                                <td> <button className="btn btn-primary" onClick={() => handlerEdit(u)}>Modifica</button><button className="btn btn-danger" onClick={() => handleDelete(u.id)}>Elimina</button></td>
                             </tr>
                         )
                     })}
